@@ -75,6 +75,7 @@ thunder_speed = 18  # 번개 속도
 
 # 폰트
 font = pygame.font.Font(None, 50)
+font_str = pygame.font.Font(None, 35)
 
 # 시간
 totalTime = 10  # 총 시간
@@ -158,8 +159,10 @@ while running:
     
     elapsedTime = (pygame.time.get_ticks() - startTime) / 1000  # 경과된 시간
     timer = font.render(str(int(totalTime - elapsedTime)), True, (255, 255, 255))   # 타이머(카운트)
+    timer_str = font_str.render('Time', True, (255, 255, 255))
     
-    screen.blit(timer, (15, 15))
+    screen.blit(timer_str, (15, 22))
+    screen.blit(timer, (80, 15))
 
     if totalTime - elapsedTime <= 0:
         print("*** Time Out ***\n다시 도전하세요 :D")
